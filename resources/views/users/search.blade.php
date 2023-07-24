@@ -43,7 +43,7 @@
                     </div>
                 </div>
             @empty
-                <p class="lead text-muted text-center">No users found.</p>
+                <p class="lead text-muted text-center">Nothing found.</p>
             @endforelse
         </div>
     </div>
