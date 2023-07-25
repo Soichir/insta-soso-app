@@ -52,7 +52,7 @@
                             <p class="fw-bold text-secondary">Suggestions for you</p>
                         </div>
                         <div class="col text-end">
-                            <a href="#" class="fw-bold text-dark text-decoration-none">See all</a>
+                            <a href="#" class="fw-bold text-dark text-decoration-none">See all suggestions</a>
                         </div>
                     </div>
 
