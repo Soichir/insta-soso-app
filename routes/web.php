@@ -85,7 +85,7 @@ Route::group(['middleware' => 'auth'], function(){
         #Admin Users
         Route::get('/users', [UsersController::class, 'index'])->name('users'); //admin.users
         Route::get('/posts', [PostsController::class, 'index'])->name('posts');
-        Route::delete('/{id}/destroy', [PostsController::class, 'destroy'])->name('posts.destroy');
+        Route::delete('/{id}/destroy', [PostsController::class, 'destroy'])->name('posts.destroy'); //admin.posts.destroy
         Route::patch('/{id}/unhide', [PostsController::class, 'unhide'])->name('posts.unhide');
         Route::delete('user/{id}/deactivate', [UsersController::class, 'deactivate'])->name('users.deactivate');
         Route::patch('user/{id}/activate', [UsersController::class, 'activate'])->name('users.activate');
