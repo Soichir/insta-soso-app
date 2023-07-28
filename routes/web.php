@@ -62,6 +62,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::patch('/update',[ProfileController::class, 'update'])->name('update');
         Route::get('/{id}/followers',[ProfileController::class, 'followers'])->name('followers');
         Route::get('/{id}/following',[ProfileController::class, 'following'])->name('following');
+        Route::get('/{id}/blocklist', [ProfileController::class, 'blockUser'])->name('blocklist');
     });
     //like
     Route::group(['prefix' => 'like', 'as' => 'like.'], function(){
@@ -78,6 +79,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::group(['prefix' => 'block', 'as' => 'block.'], function(){
         Route::post('/{user_id}/store', [BlockController::class, 'store'])->name('store');
         Route::delete('/{user_id}/destroy', [BlockController::class, 'destroy'])->name('destroy');
+        Route::delete('/{user_id}/destroyfollow', [BlockController::class, 'blockFollow'])->name('blockFollow');
     });
 
     //Admin
@@ -85,7 +87,7 @@ Route::group(['middleware' => 'auth'], function(){
         #Admin Users
         Route::get('/users', [UsersController::class, 'index'])->name('users'); //admin.users
         Route::get('/posts', [PostsController::class, 'index'])->name('posts');
-        Route::delete('/{id}/destroy', [PostsController::class, 'destroy'])->name('posts.destroy'); //admin.posts.destroy
+        Route::delete('/{id}/posts/destroy', [PostsController::class, 'destroy'])->name('posts.destroy'); //admin.posts.destroy
         Route::patch('/{id}/unhide', [PostsController::class, 'unhide'])->name('posts.unhide');
         Route::delete('user/{id}/deactivate', [UsersController::class, 'deactivate'])->name('users.deactivate');
         Route::patch('user/{id}/activate', [UsersController::class, 'activate'])->name('users.activate');

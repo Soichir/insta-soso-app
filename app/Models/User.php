@@ -82,8 +82,14 @@ class User extends Authenticatable
         return $this->hasMany(Block::class, 'blocker_id');
     }
 
+    //ブロックしているユーザー
     public function isBlocked(){
         return $this->blockers()->where('blocker_id', Auth::user()->id)->exists();
+    }
+    
+    //ブロックされているユーザー
+    public function isBlocking(){
+        return $this->blocking()->where('blocking_id', Auth::user()->id)->exists();
     }
 
     

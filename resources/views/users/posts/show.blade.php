@@ -15,7 +15,7 @@
 </style>
 
 
-
+    {{-- @unless($post->user->isBlocked() || $post->user->isBlocking()) --}}
     <div class="row border shadow">
         <div class="col p-0 border-end">
             <img src="{{$post->image}}" alt="post id {{$post->id}}" class="w-100">
@@ -141,6 +141,7 @@
             </div>
         </div>
     </div>
+    {{-- @endunless --}}
     
 
 @endsection

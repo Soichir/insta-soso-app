@@ -55,4 +55,10 @@ class ProfileController extends Controller
         $user = $this->user->findOrFail($id);
         return view('users.profile.following')->with('user', $user);
     }
+
+    public function blockUser($id){
+        $user = $this->user->findOrFail($id);
+        return view('users.profile.blocklist')
+                    ->with('user', $user);
+    }
 }

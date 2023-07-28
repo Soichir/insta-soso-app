@@ -19,7 +19,7 @@
             @endforeach
             {{-- Error message area --}}
             @error('category')
-                <p class="text-danger">{{message}}</p>
+                <p class="text-danger">{{$message}}</p>
             @enderror
 
             <div class="mb-3">
@@ -27,7 +27,7 @@
                 <textarea name="description" id="description" rows="3" class="form-control" placeholder="What's on your mind">{{old('description')}}</textarea>
                 {{-- Error Message Area --}}
                 @error('description')
-                    <p class="text-danger">{{message}}</p>
+                    <p class="text-danger">{{$message}}</p>
                 @enderror
             </div>
 
@@ -40,7 +40,7 @@
                 </div>
                 {{--  Error Message Area --}}
                 @error('image')
-                    <p class="text-danger">{{message}}</p>
+                    <p class="text-danger">{{$message}}</p>
                 @enderror
             </div>
 
